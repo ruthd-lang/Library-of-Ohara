@@ -1,0 +1,42 @@
+<h2>Lista de Livros</h2>
+
+<input
+  type="text"
+  placeholder="Buscar livro..."
+  (input)="search.set($any($event.target).value)"
+>
+
+<select
+  (change)="category.set($any($event.target).value)"
+>
+
+  @for (cat of categories(); track cat) {
+    <option
+    [value]="cat"
+    [class.highlight]="cat === category()"
+    >
+    {{ cat }}
+    </option>
+  }
+
+</select>
+
+<a routerLink="/book/create">
+  Criar Livro
+</a>
+
+<div>
+
+  @for (book of filteredBooks(); track book.id) {
+
+    <div>
+      <app-book-card
+        [book]="book"
+        (delete)="delete($event)"
+        (edit)="edit($event)">
+      </app-book-card>
+    </div>
+
+  }
+
+</div>

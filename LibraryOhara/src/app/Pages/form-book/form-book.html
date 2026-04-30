@@ -1,0 +1,51 @@
+<form (ngSubmit)="save()">
+
+  <div class="mb-3">
+    <label class="form-label">Título</label>
+    <input type="text"
+      class="form-control"
+      [(ngModel)]="book.title"
+      name="title">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Autor</label>
+    <input type="text"
+      class="form-control"
+      [(ngModel)]="book.author"
+      name="author">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Categoria</label>
+    <input type="text"
+      class="form-control"
+      [(ngModel)]="book.category"
+      name="category">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Ano</label>
+    <input type="number"
+      class="form-control"
+      [(ngModel)]="book.year"
+      name="year">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Descrição</label>
+    <textarea class="form-control"
+      [(ngModel)]="book.description"
+      name="description">
+    </textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">
+    Salvar
+  </button>
+
+  <a routerLink="/" class="btn btn-secondary ms-2">
+    Cancelar
+  </a>
+
+</form>

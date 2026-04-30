@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "ee5085a8-a518-4b82-85ca-6ff4b7f87426"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -25,9 +26,14 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/mdb5-free-standard/css/mdb.min.css" 
+            ],
+            "scripts": [
+              "src/assets/mdb5-free-standard/js/mdb.umd.min.js"
             ]
           },
+          
           "configurations": {
             "production": {
               "budgets": [

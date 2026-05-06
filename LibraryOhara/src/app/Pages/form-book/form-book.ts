@@ -19,7 +19,8 @@ export class FormBook implements OnInit {
     author: '',
     category: '',
     description: '',
-    year: 0
+    year: 0,
+    image: ''
   };
 
   isEdit = false;

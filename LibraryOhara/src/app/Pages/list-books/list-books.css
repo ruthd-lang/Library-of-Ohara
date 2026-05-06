@@ -1,3 +1,8 @@
 .highlight{
     background-color: rgb(157, 0, 255);
 }
+main{
+    margin: auto;
+    padding: auto;
+    width: 1200px;
+}

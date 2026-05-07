@@ -1,51 +1,49 @@
-<form (ngSubmit)="save()">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">{{ isEdit ? 'Editar Livro' : 'Criar Livro' }}</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="close()"
+  ></button>
+</div>
+<div class="modal-body">
+  <form (ngSubmit)="save()">
 
-  <div class="mb-3">
-    <label class="form-label">Título</label>
-    <input type="text"
-      class="form-control"
-      [(ngModel)]="book.title"
-      name="title">
-  </div>
+    <mdb-form-control class="mb-4">
+      <input mdbInput type="text" id="title" class="form-control" [(ngModel)]="book.title" name="title" />
+      <label mdbLabel class="form-label" for="title">Título</label>
+    </mdb-form-control>
 
-  <div class="mb-3">
-    <label class="form-label">Autor</label>
-    <input type="text"
-      class="form-control"
-      [(ngModel)]="book.author"
-      name="author">
-  </div>
+    <mdb-form-control class="mb-4">
+      <input mdbInput type="text" id="author" class="form-control" [(ngModel)]="book.author" name="author" />
+      <label mdbLabel class="form-label" for="author">Autor</label>
+    </mdb-form-control>
 
-  <div class="mb-3">
-    <label class="form-label">Categoria</label>
-    <input type="text"
-      class="form-control"
-      [(ngModel)]="book.category"
-      name="category">
-  </div>
+    <mdb-form-control class="mb-4">
+      <input mdbInput type="text" id="category" class="form-control" [(ngModel)]="book.category" name="category" />
+      <label mdbLabel class="form-label" for="category">Categoria</label>
+    </mdb-form-control>
 
-  <div class="mb-3">
-    <label class="form-label">Ano</label>
-    <input type="number"
-      class="form-control"
-      [(ngModel)]="book.year"
-      name="year">
-  </div>
+    <mdb-form-control class="mb-4">
+      <input mdbInput type="number" id="year" class="form-control" [(ngModel)]="book.year" name="year" />
+      <label mdbLabel class="form-label" for="year">Ano</label>
+    </mdb-form-control>
 
-  <div class="mb-3">
-    <label class="form-label">Descrição</label>
-    <textarea class="form-control"
-      [(ngModel)]="book.description"
-      name="description">
-    </textarea>
-  </div>
+    <mdb-form-control class="mb-4">
+      <input mdbInput type="url" id="image" class="form-control" [(ngModel)]="book.image" name="image" />
+      <label mdbLabel class="form-label" for="image">Link da Imagem (Capa)</label>
+    </mdb-form-control>
 
-  <button type="submit" class="btn btn-primary">
-    Salvar
-  </button>
+    <mdb-form-control class="mb-4">
+      <textarea mdbInput id="description" class="form-control" [(ngModel)]="book.description" name="description" rows="3"></textarea>
+      <label mdbLabel class="form-label" for="description">Descrição</label>
+    </mdb-form-control>
 
-  <a routerLink="/" class="btn btn-secondary ms-2">
-    Cancelar
-  </a>
+    <div class="modal-footer px-0 pb-0 border-0 pt-4">
+      <button type="button" class="btn btn-outline-secondary btn-rounded" mdbRipple (click)="close()">Cancelar</button>
+      <button type="submit" class="btn btn-primary btn-rounded shadow-3" mdbRipple>Salvar</button>
+    </div>
 
-</form>
+  </form>
+</div>

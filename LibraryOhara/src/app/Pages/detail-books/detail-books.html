@@ -1,2 +1,51 @@
-<p>detail-books works!</p>
-<p>{{ book?.title }}</p>
+<main class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      
+      @if (book) {
+        <div class="card shadow-4 border-0 rounded-5 mb-5">
+          <div class="bg-image hover-overlay ripple rounded-top-5" mdbRipple rippleColor="light">
+            <img [src]="book.image || 'https://dummyimage.com/600x300/eceff1/607d8b.png&text=Sem+Capa'" class="card-img-top rounded-top-5" style="object-fit: cover; max-height: 400px;" alt="Capa do livro {{ book.title }}"/>
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </div>
+          
+          <div class="card-body p-5">
+            <h2 class="card-title text-center text-dark fw-bold mb-5">{{ book.title }}</h2>
+            
+            <div class="row mb-4 align-items-center">
+              <div class="col-sm-4 text-muted"><strong>Autor:</strong></div>
+              <div class="col-sm-8 text-dark">{{ book.author }}</div>
+            </div>
+            
+            <div class="row mb-4 align-items-center">
+              <div class="col-sm-4 text-muted"><strong>Categoria:</strong></div>
+              <div class="col-sm-8 text-dark">{{ book.category }}</div>
+            </div>
+            
+            <div class="row mb-5 align-items-center">
+              <div class="col-sm-4 text-muted"><strong>Ano de Lançamento:</strong></div>
+              <div class="col-sm-8 text-dark">{{ book.year | yearFormat }}</div>
+            </div>
+            
+            <h5 class="mb-3 text-dark fw-bold">Descrição</h5>
+            <p class="card-text text-muted lh-lg mb-5">
+              {{ book.description }}
+            </p>
+            
+            <div class="text-center mt-4">
+              <a routerLink="/" class="btn btn-outline-primary btn-rounded" mdbRipple>
+                <i class="fas fa-arrow-left me-2"></i> Voltar para a lista
+              </a>
+            </div>
+          </div>
+        </div>
+      } @else {
+        <div class="text-center mt-5">
+          <h3 class="text-muted">Livro não encontrado.</h3>
+          <a routerLink="/" class="btn btn-outline-secondary btn-rounded mt-3" mdbRipple>Voltar</a>
+        </div>
+      }
+
+    </div>
+  </div>
+</main>

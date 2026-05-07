@@ -2,8 +2,12 @@ import { Component, OnInit, signal, computed } from '@angular/core';
 import { Books } from '../../services/books';
 import { Book } from '../../models/book';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { BookCard } from '../../Components/book-card/book-card';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { FormBook } from '../form-book/form-book';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 
 @Component({
   selector: 'app-list-books',
@@ -12,19 +16,24 @@ import { BookCard } from '../../Components/book-card/book-card';
     CommonModule,
     RouterModule,
     BookCard,
+    MdbFormsModule,
+    MdbRippleModule
   ],
   templateUrl: './list-books.html',
   styleUrl: './list-books.css',
+  providers: [MdbModalService]
 })
 export class ListBooks implements OnInit {
   books = signal<Book[]>([]);
 
   search = signal('');
   category = signal('todos');
+  
+  modalRef: MdbModalRef<FormBook> | null = null;
 
   constructor(
     private bookService: Books,
-    private router: Router
+    private modalService: MdbModalService
   ) {}
 
   ngOnInit() {
@@ -41,7 +50,23 @@ export class ListBooks implements OnInit {
   }
 
   edit(id: number) {
-    this.router.navigate(['/book/edit', id]);
+    this.openFormModal(id);
+  }
+
+  create() {
+    this.openFormModal(null);
+  }
+
+  openFormModal(id: number | null) {
+    this.modalRef = this.modalService.open(FormBook, {
+      data: { bookId: id }
+    });
+
+    this.modalRef.onClose.subscribe((result: boolean) => {
+      if (result) {
+        this.loadBooks();
+      }
+    });
   }
 
   filteredBooks = computed(() => {

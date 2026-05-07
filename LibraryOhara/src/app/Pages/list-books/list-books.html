@@ -1,45 +1,53 @@
 
-<main>
-<h2>Lista de Livros</h2>
+<main class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Lista de Livros</h2>
+    <button class="btn btn-primary btn-rounded shadow-3" mdbRipple (click)="create()">
+      <i class="fas fa-plus me-2"></i> Criar Livro
+    </button>
+  </div>
 
-<input
-  type="text"
-  placeholder="Buscar livro..."
-  (input)="search.set($any($event.target).value)"
->
-
-<select
-  (change)="category.set($any($event.target).value)"
->
-
-  @for (cat of categories(); track cat) {
-    <option
-    [value]="cat"
-    [class.highlight]="cat === category()"
-    >
-    {{ cat }}
-    </option>
-  }
-
-</select>
-
-<a routerLink="/book/create">
-  Criar Livro
-</a>
-
-<div>
-
-  @for (book of filteredBooks(); track book.id) {
-
-    <div>
-      <app-book-card
-        [book]="book"
-        (delete)="delete($event)"
-        (edit)="edit($event)">
-      </app-book-card>
+  <div class="row mb-4">
+    <div class="col-md-9 mb-3 mb-md-0">
+      <mdb-form-control>
+        <input
+          mdbInput
+          type="text"
+          id="searchBox"
+          class="form-control"
+          (input)="search.set($any($event.target).value)"
+        />
+        <label mdbLabel class="form-label" for="searchBox">Buscar livro...</label>
+      </mdb-form-control>
     </div>
 
-  }
+    <div class="col-md-3">
+      <select
+        class="form-select shadow-3 border-0"
+        style="height: 100%; border-radius: 0.5rem;"
+        (change)="category.set($any($event.target).value)"
+      >
+        @for (cat of categories(); track cat) {
+          <option
+            [value]="cat"
+            [selected]="cat === category()"
+          >
+          {{ cat | titlecase }}
+          </option>
+        }
+      </select>
+    </div>
+  </div>
 
-</div>
+  <div class="row">
+    @for (book of filteredBooks(); track book.id) {
+      <div class="col-md-4 col-lg-3 mb-4">
+        <app-book-card
+          [book]="book"
+          (delete)="delete($event)"
+          (edit)="edit($event)">
+        </app-book-card>
+      </div>
+    }
+  </div>
 </main>

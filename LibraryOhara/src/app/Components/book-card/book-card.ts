@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CapitalizePipe } from '../../pipes/capitalize-pipe';
 import { YearFormatPipe } from '../../pipes/year-format-pipe';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 
 @Component({
   selector: 'app-book-card',
@@ -11,7 +12,8 @@ import { YearFormatPipe } from '../../pipes/year-format-pipe';
   imports: [CommonModule,
     RouterModule,
     CapitalizePipe,
-    YearFormatPipe
+    YearFormatPipe,
+    MdbRippleModule
   ],
   templateUrl: './book-card.html',
 })

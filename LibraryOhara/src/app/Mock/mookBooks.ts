@@ -8,7 +8,7 @@ export const mockBooks: Book[] = [
     category: 'Mangá',
     description: 'O início da jornada de Monkey D. Luffy para se tornar o Rei dos Piratas.',
     year: 1997,
-    image: 'https://m.media-amazon.com/images/I/91T54Sn6DqL.jpg'
+    image: 'https://static.wikia.nocookie.net/onepiece/images/0/0e/Volume_1.png/revision/latest/scale-to-width/360?cb=20141213103745&path-prefix=it'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const mockBooks: Book[] = [
     category: 'Mangá',
     description: 'Após dois anos de treinamento, a tripulação se reencontra em Sabaody.',
     year: 2011,
-    image: 'https://m.media-amazon.com/images/I/91SleSclp5L.jpg'
+    image: 'https://m.media-amazon.com/images/I/91-hChNOKhL.jpg'
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const mockBooks: Book[] = [
     category: 'Mangá',
     description: 'O incrível flashback de Kozuki Oden e sua jornada com Roger e Whitebeard.',
     year: 2020,
-    image: 'https://m.media-amazon.com/images/I/91E68Yk6bDL.jpg'
+    image: 'https://m.media-amazon.com/images/I/91b5-aiPbnL._UF1000,1000_QL80_.jpg'
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const mockBooks: Book[] = [
     category: 'Mangá',
     description: 'O marco histórico do volume 100 com o clímax da guerra em Onigashima.',
     year: 2021,
-    image: 'https://m.media-amazon.com/images/I/91un7VAnSGL.jpg'
+    image: 'https://m.media-amazon.com/images/I/91WvJiO9VNL._UF1000,1000_QL80_.jpg'
   },
   {
     id: 5,
@@ -44,6 +44,6 @@ export const mockBooks: Book[] = [
     category: 'Mangá',
     description: 'A batalha final entre Luffy e Kaido atinge níveis divinos.',
     year: 2022,
-    image: 'https://m.media-amazon.com/images/I/81S7Z8IcfuL.jpg'
+    image: 'https://static.wikia.nocookie.net/onepiece/images/a/a9/Volume_104.png/revision/latest?cb=20240817155822&path-prefix=pt'
   }
 ];

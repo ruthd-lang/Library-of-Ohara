@@ -15,7 +15,7 @@ import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 })
 export class FormBook implements OnInit {
 
-  bookId: number | null = null; // Passed from modal open
+  bookId: number | null = null; 
 
   book: Book = {
     id: 0,
@@ -51,7 +51,7 @@ export class FormBook implements OnInit {
     } else {
       this.bookService.addBook(this.book);
     }
-    this.modalRef.close(true); // Return success
+    this.modalRef.close(true);
   }
 
   close(): void {

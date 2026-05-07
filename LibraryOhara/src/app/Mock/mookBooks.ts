@@ -45,5 +45,14 @@ export const mockBooks: Book[] = [
     description: 'A batalha final entre Luffy e Kaido atinge níveis divinos.',
     year: 2022,
     image: 'https://static.wikia.nocookie.net/onepiece/images/a/a9/Volume_104.png/revision/latest?cb=20240817155822&path-prefix=pt'
+  },
+  {
+    id: 6,
+    title: 'One Piece Receitas Piratas 01',
+    author: 'Eichiro Oda',
+    category: 'Receitas Piratas',
+    description: 'Este é um livro de receitas onde Sanji, o cozinheiro do Bando do Chapéu de Palha, vai te ensinar a preparar os pratos mais saborosos já vistos em "One Piece"!',
+    year: 2023,
+    image: 'https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_5a4h8754vp2ij1g0vlt7456r1f/-S897-FWEBP'
   }
 ];

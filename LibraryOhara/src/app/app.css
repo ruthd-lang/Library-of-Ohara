@@ -3,21 +3,6 @@
     background-color: #FBF7F0; 
     min-height: 100vh;
 }
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 60px;
-    background-color: #3B2A22 !important;
-}
-footer {
-    position: relative;
-    z-index: 1;
-    background-color: #3B2A22 !important;
-    color: #F5EEDC;
-}
-
 .arvore {
     position: fixed; 
     top: 0;

@@ -9,7 +9,8 @@ import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 @Component({
   selector: 'app-book-card',
   standalone: true,
-  imports: [CommonModule,
+  imports: [
+    CommonModule,
     RouterModule,
     CapitalizePipe,
     YearFormatPipe,

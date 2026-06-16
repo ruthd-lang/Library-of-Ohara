@@ -1,4 +1,4 @@
-<div class="card h-100 shadow-3 rounded-5 border-0">
+<div class="card h-100 shadow-3 rounded-5 border-0" data-aos="fade-right">
   <div class="bg-image hover-overlay" mdbRipple rippleColor="light">
     <img [src]="book.image || 'https://dummyimage.com/600x400/eceff1/607d8b.png&text=Sem+Capa'" class="card-img-top rounded-top-5" style="object-fit: cover; height: 200px;" alt="Capa do livro {{ book.title }}"/>
     <a [routerLink]="['/book', book.id]">
@@ -6,7 +6,7 @@
     </a>
   </div>
 
-  <div class="card-body p-4">
+  <div class="card-body p-4" data-aos="fade-up">
     <h5 class="card-title text-dark fw-bold mb-3">
       {{ book.title | capitalize }}
     </h5>
